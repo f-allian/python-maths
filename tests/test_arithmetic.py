@@ -4,7 +4,7 @@ import pytest
 
 from pythonmaths import arithmetic
 
-from zerodivisionerror import ZeroDivisionError
+from builtins import ZeroDivisionError
 
 
 @pytest.mark.parametrize(  # type: ignore[misc]
