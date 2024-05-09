@@ -4,10 +4,7 @@ import pytest
 
 from pythonmaths import arithmetic
 
-from builtins import ZeroDivisionError
-
-
-@pytest.mark.parametrize(  # type: ignore[misc]
+pytest.mark.parametrize(  # type: ignore[misc]
     ("x", "y", "expected"),
     [
         pytest.param(1, 3, 4, id="Add two positive integers"),
