@@ -4,8 +4,7 @@ import pytest
 
 from pythonmaths import arithmetic
 
-
-@pytest.mark.parametrize(  # type: ignore[misc]
+pytest.mark.parametrize(  # type: ignore[misc]
     ("x", "y", "expected"),
     [
         pytest.param(1, 3, 4, id="Add two positive integers"),
@@ -65,6 +64,11 @@ def test_divide(x: int | float, y: int | float, expected: int | float) -> None:
     """Test the divide function."""
     assert arithmetic.divide(x, y) == pytest.approx(expected)
 
+
+def test_divide_zero_division_exception() -> None:
+    """Test that a ZeroDivsionError is raised by the divide() function."""
+    with pytest.raises(ZeroDivisionError):
+        divide(2, 0)
 
 @pytest.mark.parametrize(  # type: ignore[misc]
     ("x", "y"),
