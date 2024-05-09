@@ -4,6 +4,8 @@ import pytest
 
 from pythonmaths import arithmetic
 
+from zerodivisionerror import ZeroDivisionError
+
 
 @pytest.mark.parametrize(  # type: ignore[misc]
     ("x", "y", "expected"),
