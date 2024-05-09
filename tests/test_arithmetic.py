@@ -76,3 +76,16 @@ def test_divide_zerodivision_error(x: int | float, y: int | float) -> None:
     """Test ZeroDivision is raised."""
     with pytest.raises(ZeroDivisionError):
         arithmetic.divide(x, y)
+
+@pytest.mark.parametrix(
+    ("x", "target"),
+    [
+        pytest.mark(4, 2, id="square root of 4"),
+        pytest.mark(9, 3.0, id="square root of 9"),
+        pytest.mark(25, 5.0, id="square root of 25"),
+        pytest.mark(2, 1.4142135623730951, id="square root of 2"),
+    ],
+)
+def test_square_root(x: int | float, target: int | float) -> None:
+    """Test the square_root() function."""
+    assert pytest.approx(arithmetic.square_root(x), target)
