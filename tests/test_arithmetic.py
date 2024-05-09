@@ -70,7 +70,6 @@ def test_divide_zero_division_exception() -> None:
     with pytest.raises(ZeroDivisionError):
         divide(2, 0)
 
-
 @pytest.mark.parametrize(  # type: ignore[misc]
     ("x", "y"),
     [
